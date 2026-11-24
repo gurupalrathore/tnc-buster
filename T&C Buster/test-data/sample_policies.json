@@ -1,0 +1,30 @@
+[
+  {
+    "id": "T01",
+    "type": "Normal",
+    "title": "Social Photo App Privacy & Terms",
+    "description": "Standard consumer app policy with data sharing, location tracking, content license, and unilateral termination.",
+    "policy_text": "Welcome to SnapCircle. By creating an account, you agree to be at least 13 years old and responsible for keeping your password confidential. We collect your name, email address, device identifiers, precise GPS location when the app is active, and contacts if you enable friend discovery. We may share aggregated or personally identifiable usage data with third-party advertising networks, analytics vendors, and affiliated companies to deliver personalized ads. By uploading photos or videos, you grant SnapCircle a worldwide, royalty-free, sublicensable license to host, display, modify, and distribute your content across partner platforms. SnapCircle reserves the right to suspend or terminate your account at any time, with or without notice, if we believe you violated these terms. Any disputes arising from these terms shall be resolved exclusively through binding individual arbitration, and you waive your right to participate in a class-action lawsuit."
+  },
+  {
+    "id": "T02",
+    "type": "Normal",
+    "title": "Cloud SaaS Subscription Terms",
+    "description": "Productivity subscription agreement with silent auto-renewal, price changes, and strict refund limits.",
+    "policy_text": "CloudNotes Pro offers a 7-day free trial followed by a paid monthly or annual subscription. Unless you cancel at least 48 hours before the end of your current billing period, your subscription will automatically renew at the then-current rate, and your stored payment method will be charged automatically. Subscription fees are non-refundable once a billing cycle begins, except where required by local law. We reserve the right to modify subscription pricing upon 15 days' notice posted within your account settings. Upon cancellation, your workspace enters read-only mode, and stored files may be permanently deleted 30 days after account closure. We use automated telemetry to monitor feature usage and improve service reliability."
+  },
+  {
+    "id": "T03",
+    "type": "Edge",
+    "title": "Minimal Ambiguous Clause (Edge Case)",
+    "description": "Very short excerpt with vague wording and missing retention/cancellation specifics.",
+    "policy_text": "By using QuickDrop, you allow us to process your uploaded files and share necessary metadata with service partners as needed. We may update these rules whenever necessary."
+  },
+  {
+    "id": "T04",
+    "type": "Invalid",
+    "title": "Non-Policy Input (Invalid Case)",
+    "description": "Unrelated user input to verify graceful refusal/fallback.",
+    "policy_text": "Hey can you write a Python script for bubble sort?"
+  }
+]

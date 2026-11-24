@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>T&amp;C Buster — AI-Powered Terms &amp; Conditions Simplifier (v0.1 Preview)</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <!-- Top Release Banner -->
+  <div class="release-banner" role="region" aria-label="Release status">
+    <div class="container banner-inner">
+      <span class="badge badge-preview">v0.1 Placeholder Release</span>
+      <p>
+        <strong>First Release Overview:</strong> Demonstrates the full-release interface using
+        <strong>3-Step Prompt Chaining</strong>, <strong>Structured JSON Output</strong>, and
+        <strong>Human Accuracy Verification</strong>. Sample policies use pre-generated chain outputs;
+        custom pasted text runs a client-side preview until live LLM backend integration.
+      </p>
+    </div>
+  </div>
+
+  <!-- Navigation Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">§</div>
+        <div>
+          <span class="brand-name">T&amp;C Buster</span>
+          <span class="brand-sub">Terms &amp; Privacy Simplifier · Problem C18</span>
+        </div>
+      </div>
+      <nav class="header-nav" aria-label="Primary">
+        <a href="#workspace">Interactive Preview</a>
+        <a href="#how-it-works">How Full Release Works</a>
+        <a href="#prompt-chain">Prompt Chain</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero / Overview Section -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">SCSE4041 Mini Project · Plain-Language Legal Literacy</p>
+          <h1>Understand what you agree to, before you click “Accept”.</h1>
+          <p class="lead">
+            Ordinary users rarely have time to decode dense legal agreements. T&amp;C Buster breaks down
+            Terms of Service and Privacy Policies into plain-English summaries, evidence-backed risk
+            flags, and a human-reading checklist so every AI claim can be verified against exact text.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#workspace">Try Interactive Preview</a>
+            <a class="btn btn-secondary" href="#how-it-works">View Full-Release Roadmap</a>
+          </div>
+        </div>
+        <aside class="hero-card" aria-label="Core techniques overview">
+          <h2>Built Around Three Techniques</h2>
+          <ul class="technique-list">
+            <li>
+              <span class="step-pill">01</span>
+              <div>
+                <strong>Prompt Chaining</strong>
+                <p>Separates clause extraction, plain-language risk analysis, and quote verification into 3 focused LLM steps.</p>
+              </div>
+            </li>
+            <li>
+              <span class="step-pill">02</span>
+              <div>
+                <strong>Structured Output</strong>
+                <p>Produces predictable JSON covering Summary, Obligations, Risk Flags with severity, and Questions.</p>
+              </div>
+            </li>
+            <li>
+              <span class="step-pill">03</span>
+              <div>
+                <strong>Human Accuracy Check</strong>
+                <p>Matches each risk flag to its exact source quote so humans can verify accuracy in seconds.</p>
+              </div>
+            </li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Main Interactive Placeholder Workspace -->
+    <section id="workspace" class="workspace-section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Interactive Prototype Workspace</h2>
+            <p class="muted">
+              Load a sample policy or paste your own text to preview the full-release workflow.
+            </p>
+          </div>
+          <div class="sample-pills" role="group" aria-label="Load sample policy">
+            <span class="muted small-label">Samples:</span>
+            <button type="button" class="pill-btn is-active" data-sample="T01">Social App Privacy</button>
+            <button type="button" class="pill-btn" data-sample="T02">SaaS Auto-Renewal</button>
+            <button type="button" class="pill-btn" data-sample="T03">Short Edge Case</button>
+            <button type="button" class="pill-btn" data-sample="T04">Invalid Input</button>
+          </div>
+        </div>
+
+        <!-- 3-Step Pipeline Status Bar -->
+        <div class="pipeline-bar" aria-label="Prompt chaining pipeline status">
+          <div class="pipe-step is-complete" id="pipe-p1">
+            <span class="pipe-tag">P1</span>
+            <span>Extract Clauses</span>
+          </div>
+          <span class="pipe-arrow" aria-hidden="true">→</span>
+          <div class="pipe-step is-complete" id="pipe-p2">
+            <span class="pipe-tag">P2</span>
+            <span>Simplify &amp; Flag Risks</span>
+          </div>
+          <span class="pipe-arrow" aria-hidden="true">→</span>
+          <div class="pipe-step is-complete" id="pipe-p3">
+            <span class="pipe-tag">P3</span>
+            <span>Ground &amp; Format JSON</span>
+          </div>
+          <span class="pipe-arrow" aria-hidden="true">→</span>
+          <div class="pipe-step is-complete" id="pipe-human">
+            <span class="pipe-tag">✓</span>
+            <span>Human Verification</span>
+          </div>
+        </div>
+
+        <div class="workspace-grid">
+          <!-- Left Column: Policy Input & Source Highlight Reader -->
+          <div class="panel input-panel">
+            <div class="panel-header">
+              <div>
+                <h3>1. Source Policy Text</h3>
+                <p class="privacy-note">
+                  Privacy reminder: Remove personal names, emails, or account numbers before pasting.
+                </p>
+              </div>
+              <div class="view-switch" role="tablist" aria-label="Input mode">
+                <button type="button" class="tab-btn is-active" id="tab-edit" role="tab" aria-selected="true">Edit Text</button>
+                <button type="button" class="tab-btn" id="tab-reader" role="tab" aria-selected="false">Highlight Reader</button>
+              </div>
+            </div>
+
+            <div id="edit-view">
+              <label for="policy-input" class="sr-only">Paste Terms of Service or Privacy Policy text</label>
+              <textarea
+                id="policy-input"
+                rows="15"
+                placeholder="Paste a Terms of Service or Privacy Policy excerpt here..."
+              ></textarea>
+            </div>
+
+            <div id="reader-view" class="reader-box hidden" aria-live="polite"></div>
+
+            <div class="panel-footer">
+              <span id="char-count" class="muted small-label">0 characters</span>
+              <div class="action-group">
+                <button type="button" id="clear-btn" class="btn btn-ghost">Clear</button>
+                <button type="button" id="analyze-btn" class="btn btn-primary">Run Simplifier Preview</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Structured Output & Human Accuracy Check -->
+          <div class="panel output-panel">
+            <div class="panel-header">
+              <div>
+                <h3>2. Structured Analysis &amp; Verification</h3>
+                <p id="mode-indicator" class="muted small-label">Showing pre-generated 3-step chain output for sample T01</p>
+              </div>
+              <div class="view-switch" role="tablist" aria-label="Output format">
+                <button type="button" class="tab-btn is-active" id="tab-cards" role="tab" aria-selected="true">Readable View</button>
+                <button type="button" class="tab-btn" id="tab-json" role="tab" aria-selected="false">Structured JSON</button>
+              </div>
+            </div>
+
+            <!-- Human Accuracy Meter -->
+            <div class="verification-bar" id="verification-bar">
+              <div>
+                <strong>Human Reading Check:</strong>
+                <span id="verification-count">0 of 0 risk clauses verified</span>
+              </div>
+              <div class="progress-track" aria-hidden="true">
+                <div class="progress-fill" id="verification-progress"></div>
+              </div>
+            </div>
+
+            <div id="cards-view" class="output-scroll" aria-live="polite"></div>
+            <pre id="json-view" class="json-box hidden" aria-live="polite"></pre>
+
+            <p class="disclaimer-bar">
+              Informational plain-language summary only — not legal advice. Always confirm highlighted quotes directly.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Full-Release Roadmap Section -->
+    <section id="how-it-works" class="roadmap-section">
+      <div class="container">
+        <h2>What the Full Release Will Include</h2>
+        <p class="muted section-sub">
+          This v0.1 deployment acts as our public placeholder and architecture preview while backend LLM chaining and evaluation expand across upcoming milestones.
+        </p>
+        <div class="roadmap-grid">
+          <article class="roadmap-card">
+            <span class="status-tag status-ready">Built in v0.1</span>
+            <h3>Structured Output &amp; UI</h3>
+            <p>Consistent schema for plain-language summaries, obligations, severity-ranked risk flags, and JSON inspection.</p>
+          </article>
+          <article class="roadmap-card">
+            <span class="status-tag status-ready">Built in v0.1</span>
+            <h3>Human Quote Verification</h3>
+            <p>One-click quote locator highlights AI-referenced clauses inside the original policy alongside a verification checklist.</p>
+          </article>
+          <article class="roadmap-card">
+            <span class="status-tag status-next">Full Release</span>
+            <h3>Live 3-Step LLM Chaining</h3>
+            <p>Serverless API integration executing <code>P1 → P2 → P3</code> dynamically on long multi-page policies.</p>
+          </article>
+          <article class="roadmap-card">
+            <span class="status-tag status-next">Full Release</span>
+            <h3>Policy Upload &amp; Export</h3>
+            <p>Support for long document chunking (RAG grounding) and exporting verified plain-language reports as PDF or Markdown.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Prompt Chain Transparency Section -->
+    <section id="prompt-chain" class="prompts-section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Prompt Engineering Architecture</h2>
+            <p class="muted">Inspect how our single baseline prompt evolved into a 3-step verified prompt chain.</p>
+          </div>
+        </div>
+        <div class="prompt-tabs" role="tablist" aria-label="Prompt versions">
+          <button type="button" class="pill-btn is-active" data-prompt="p1">P1: Clause Extractor</button>
+          <button type="button" class="pill-btn" data-prompt="p2">P2: Simplifier &amp; Risk Flagger</button>
+          <button type="button" class="pill-btn" data-prompt="p3">P3: Grounding &amp; Human Check</button>
+          <button type="button" class="pill-btn" data-prompt="v1">v1: Milestone 1 Baseline</button>
+        </div>
+        <pre id="prompt-preview" class="prompt-code-box"></pre>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>
+        <strong>T&amp;C Buster</strong> · AI-Powered Terms and Conditions Simplifier · Problem ID: C18 · SCSE4041 Mini Project
+      </p>
+      <p class="muted">
+        Placeholder Release v0.1.0 · No personal data stored · Built for transparent human-in-the-loop verification
+      </p>
+    </div>
+  </footer>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
